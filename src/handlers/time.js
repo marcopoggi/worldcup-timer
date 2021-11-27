@@ -1,14 +1,20 @@
-export const timeFunctions = {
-    getTimeData: () => {
-        // UTC TIME
-        let days = (new Date("2022-11-21").getTime() - new Date().getTime()) / 86400000 // convert to ms -> day
-        let hour = (days % 1) * 24
-        let min = (hour % 1) * 60
-        let second = (min % 1) * 60
-        let d = (Math.floor(days) < 10) ? `0${Math.floor(days)}` : Math.floor(days) 
-        let h = (Math.floor(hour) < 10) ? `0${Math.floor(hour)}` : Math.floor(hour) 
-        let m = (Math.floor(min) < 10) ? `0${Math.floor(min)}` : Math.floor(min) 
-        let s = (Math.floor(second) < 10) ? `0${Math.floor(second)}` : Math.floor(second) 
-        return {d,h,m,s}
+// UTC TIME - or + difference UTC of the country
+const end = new Date("2022-11-21").getTime() + new Date().getTimezoneOffset() * 60000;
+
+const setFormat = num => {
+    let numFloor = Math.floor(num);
+    return (numFloor < 10) ? `0${numFloor}` : numFloor;
+}
+
+export const getTime = () => {
+    let days = (end - new Date().getTime()) / 86400000, // convert to ms -> day
+    hour = (days % 1) * 24,
+    min = (hour % 1) * 60,
+    second = (min % 1) * 60
+    return{
+        d:setFormat(days),
+        h:setFormat(hour),
+        m:setFormat(min),
+        s:setFormat(second)
     }
 }
