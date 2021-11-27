@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
 
+@font-face {
+    font-family: 'arab-qatar';
+    src: url('../resources/fonts/Qatar2022Arabic-Heavy.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
 *{
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'arab-qatar', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -9,16 +16,13 @@
 /* basic styles */
 
 body{
-    background: url('../resources/messi.gif') no-repeat center;
+    background: url('../resources/img/messi.gif') no-repeat center;
     background-size: cover;
     color: #fff;
 }
 
-header,footer,main {
-    width: 100vw;
-}
-
 header,footer,main{
+    width: 100vw;
     cursor: default;
     align-items: center;
     display: flex;
@@ -27,11 +31,7 @@ header,footer,main{
 }
 
 header{
-    display: flex;
-    justify-content: center;
-    align-content:center;
     flex-flow: column;
-    row-gap: 5px;
     height: 200px
 }
 
@@ -53,8 +53,9 @@ footer{
 
 /* HEADER ELEMS */
 #header-title{
+    font-family: 'arab-qatar', sans-serif;
     font-size: 100px;
-    text-shadow: 10px 10px 10px rgba(108, 29, 69, 0.9);;
+    text-shadow: 10px 5px 3px rgba(108, 29, 69, 0.9);;
 }
 
 #header-img{
@@ -95,7 +96,11 @@ footer > p {
     font-weight: weight;
 }
 
+footer > a {
+    margin-left: 10px;
+    height: 20px;
+}
+
 #github-img{
-    margin: 0 10px;
-    width: 24px;
+    width: 20px;
 }
