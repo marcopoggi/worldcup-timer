@@ -1,5 +1,5 @@
-import { view } from "./handlers/view.js";
+import { elems,timer } from "./handlers/view.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    view();
+    timer(elems);
 })
