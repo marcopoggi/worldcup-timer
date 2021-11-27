@@ -1,25 +1,28 @@
-import { timeFunctions } from "./time.js"
+import { getTime } from "./time.js"
 
-export function view(){
-    let elems = {
-        day: document.getElementById('day-text'),
-        hour: document.getElementById('hour-text'),
-        min: document.getElementById('min-text'),
-        sec: document.getElementById('sec-text'),
-    }
-    const setView = (data,elements) =>{
-        elements.day.textContent = data.d;
-        elements.hour.textContent = data.h;
-        elements.min.textContent = data.m;
-        elements.sec.textContent = data.s;
-    }
-    const setTime = elements => {
-        let data = timeFunctions.getTimeData();
-        setView(data,elements)
-        setInterval(()=>{
-            data = timeFunctions.getTimeData();
-            setView(data,elements)
-        },1000)
-    }
-    setTime(elems)
+export const elems = {
+    day: document.getElementById('day-text'),
+    hour: document.getElementById('hour-text'),
+    min: document.getElementById('min-text'),
+    sec: document.getElementById('sec-text'),
 }
+
+export const timer = elements => {
+    updateView(elements);
+    setInterval(()=>{
+        updateView(elements);
+    },1000)
+}
+
+const setView = (data,elements) =>{
+    elements.day.textContent = data.d;
+    elements.hour.textContent = data.h;
+    elements.min.textContent = data.m;
+    elements.sec.textContent = data.s;
+}
+
+const updateView = (elements) => {
+    let data = getTime();
+    setView(data,elements)
+}
+
