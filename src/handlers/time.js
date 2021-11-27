@@ -1,7 +1,7 @@
 export const timeFunctions = {
     getTimeData: () => {
         // UTC TIME
-        let days = (new Date("2021-11-28").getTime() - new Date().getTime()) / 86400000 // convert to ms -> day
+        let days = (new Date("2022-11-21").getTime() - new Date().getTime()) / 86400000 // convert to ms -> day
         let hour = (days % 1) * 24
         let min = (hour % 1) * 60
         let second = (min % 1) * 60
