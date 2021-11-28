@@ -15,14 +15,21 @@
 
 /* basic styles */
 
+.text-sep{
+    display: none;
+    font-size: 2.1em;
+}
+
+
 body{
-    background: url('../resources/img/messi.gif') no-repeat center;
+    font-size: 14px;
+    background: url('../resources/img/messi-goal.gif') no-repeat center;
     background-size: cover;
     color: #fff;
 }
 
 header,footer,main{
-    width: 100vw;
+    width: 100%;
     cursor: default;
     align-items: center;
     display: flex;
@@ -36,38 +43,35 @@ header{
 }
 
 main{
-    min-height: calc(100vh - 200px - 32px)
+    min-height: calc(100vh - 200px - 2em)
 }
 
 footer{
     background-color: rgba(0, 0, 0, 0.6);
     font-family: sans-serif;
-    height: 32px
+    height: 2em
 }
 
 /* elems styles */
 
 #main-container{
-    background-color:rgba(0, 0, 0, 0.85)
+    background-color:rgba(0, 0, 0, 0.75)
 }
 
 /* HEADER ELEMS */
 #header-title{
+    margin-top: 20px;
     font-family: 'arab-qatar', sans-serif;
-    font-size: 100px;
-    text-shadow: 10px 5px 3px rgba(108, 29, 69, 0.9);;
+    font-size: 5em;
+    text-shadow: 10px 8px 2px rgba(131, 33, 82, 0.938);;
 }
 
-#header-img{
-    width: 64px;
+#duration-time{
+    letter-spacing: 1px;
+    font-size: 1.875em;
 }
 
 /* MAIN ELEMS */
-
-#clock-container > h2 {
-    font-size: 45px;
-}
-
 #clock-container{
     align-content: center;
     display: grid;
@@ -76,31 +80,77 @@ footer{
     justify-items: center;
     text-transform: uppercase;
     margin: 10px;
+    column-gap: 20px;
     row-gap: 20px;
     width: 90vw;
 }
 
 .title-data{
-    text-shadow: 1px 0px 5px rgba(255, 255, 255, 0.5);
+    font-size: 2.8em;
 }
 
 .display-data{
-    font-size: 40px;
+    font-size: 2.1em;
 }
 
 
 /* FOOTER ELEMS */
 footer > p {
-    font-size: 12px;
+    font-size: 1em;
     font-family: sans-serif;
     font-weight: weight;
 }
 
 footer > a {
     margin-left: 10px;
-    height: 20px;
+    height: 1.25em;
 }
 
 #github-img{
-    width: 20px;
+    width: 1.25em;
 }
+
+/* media queries */
+
+/*fullhd devices (large desktops, 1920px and up) */
+@media (min-width: 1920px) { 
+    body{
+        font-size: 24px; 
+    }
+ }
+
+/*mobile/tablet devices (tabler, 1920px and up) */
+ @media (max-width:580px){ 
+    #clock-container{
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    .text-sep{
+        display: inline;
+    }
+
+    .title-data{
+        display: none;
+    }
+
+    body{
+        font-size: 12px; 
+    }
+ 
+}
+@media (max-width:340px){ 
+    #clock-container{
+        font-size: 10px;
+    }
+    body{
+        font-size: 8px; 
+    }
+ }
+
+
+
