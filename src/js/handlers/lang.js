@@ -1,4 +1,4 @@
-import { getData } from "../ajax/request.js";
+import { getData } from "../services/request.js";
 
 //init lang
 const url = "../../../src/assets/resources/json/lang.json";
@@ -6,7 +6,8 @@ const url = "../../../src/assets/resources/json/lang.json";
 const langElems = {
     "duration-time": document.getElementById("duration-time"),
     "title-data": Array.from(document.getElementsByClassName("title-data")),
-    "footer-description": document.getElementById("footer-description")
+    "footer-description": document.getElementById("footer-description"),
+    "finish-timer":document.getElementById("finish-timer")
 }
 
 //update view with json data
@@ -18,6 +19,7 @@ const updateLang = (lang,elems,data) =>{
         i++;
     });
     elems["footer-description"].textContent = data[lang]["footer-data"];
+    elems["finish-timer"].textContent=data[lang]["finish-data"];
 }
 
 export const initLang = async storage => {
