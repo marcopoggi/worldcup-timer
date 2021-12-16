@@ -2,11 +2,13 @@
     "en":{
         "duration-time":"Nov 21 - Dec 18",
         "title-data":["days","hours","mins","secs"],
-        "footer-data":"Developed by Marco Poggi"
+        "footer-data":"Visit the project on GitHub",
+        "finish-data":"HAS BEGUN!"
     },
     "es":{
         "duration-time":"Nov 21 - Dic 18",
         "title-data":["dias","horas","mins","segs"],
-        "footer-data":"Desarrollado por Marco Poggi"
+        "footer-data":"Visita el proyecto en GitHub",
+        "finish-data":"¡HA EMPEZADO!"
     }
 }
