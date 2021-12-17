@@ -24,7 +24,7 @@
 body{
     font-family: 'arab-qatar', sans-serif;
     font-size: 14px;
-    background: url('../resources/img/qatar2022.jpg') no-repeat center;
+    background: url('../resources/img/qatar2022.webp') no-repeat center;
     background-size: cover;
     color: #fff;
     animation: bg-pan-left 15s infinite alternate-reverse both; 
