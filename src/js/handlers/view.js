@@ -8,10 +8,8 @@ const elems = {
 }
 
 export const timer = (state,endDate = '00-00-00') => {
-    console.log(state);
     if(state === true){
         let id = setInterval(()=>{
-            console.log('dentro')
             updateView(elems,id,endDate);
         },1000)
     }
