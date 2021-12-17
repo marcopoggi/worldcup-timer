@@ -1,7 +1,5 @@
 import { getData } from "../services/request.js";
 
-//init lang
-const url = "../../../src/assets/resources/json/lang.json";
 
 const langElems = {
     "duration-time": document.getElementById("duration-time"),
@@ -23,9 +21,10 @@ const updateLang = (lang,elems,data) =>{
 }
 
 export const initLang = async storage => {
+    let path = window.location.pathname;
     try {
         let lang = storage.getItem("lang");
-        let data = await getData(url);
+        let data = await getData(`${path}/assets/resources/json/lang.json`);
         updateLang(lang,langElems,data);
     } catch (error) {
         if(error instanceof TypeError){
